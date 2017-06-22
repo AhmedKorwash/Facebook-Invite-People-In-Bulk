@@ -39,7 +39,6 @@ namespace Facebook_Invite_People
                 auth.Cookies.Add(response.Cookies);
                 StreamReader sr = new StreamReader(response.GetResponseStream());
                 string html = sr.ReadToEnd();
-                var logs_id = html.Split(new string[] { "gfid=" }, StringSplitOptions.RemoveEmptyEntries);
                 var logs_page = html.Split(new string[] { "page_id=" }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var item in logs_page)
                 {
