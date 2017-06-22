@@ -19,7 +19,9 @@ namespace Facebook_Invite_People
         //invitee_id immutable for each user
         //gfid immutable at the while you request to invite in referance to the user and page
 
-       public void StartInvite(string user, string pass, string uid)
+       // This is Single Method to invite the UID to all of your page
+        // you can use multi for multiple account.
+        public void StartInvite(string user, string pass, string uid)
         {
             AuthFaceBook auth = new AuthFaceBook(user, pass);
             if (auth.IsLogin)
@@ -65,7 +67,7 @@ namespace Facebook_Invite_People
                     response = (HttpWebResponse)request.GetResponse();
                     auth.Cookies.Add(response.Cookies);
                     sr = new StreamReader(response.GetResponseStream());
-                    html = sr.ReadToEnd();
+                    html = sr.ReadToEnd();// You can brows them to check if they done or not.
                 }
                 
             }
